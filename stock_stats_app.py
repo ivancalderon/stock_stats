@@ -17,24 +17,18 @@ import pandas as pd
 import datetime as dt
 import json
 import numpy as np
-# %%
 
 
-path = '/Users/ivancalderon/Documents/Trading/Record/low_spread_stocks.txt'
-with open(path, 'r') as text:
-    ticker_list = text.read().rsplit('\n')
-options = []
-for tick in sorted(ticker_list):
-    options.append({'label': tick, 'value': tick})
 # %%
 app = dash.Dash(__name__)
 app.layout = html.Div(children=[
     html.H1('Stock Price Statistics', className='title'),
     html.Div(className='mini-container',
             children=[
-                    dcc.Dropdown(
+                    dcc.Input(
+                                placeholder='Enter a value...',
                                 id='ticker_dropdown',
-                                options=options,
+                                type='text',
                                 value='x',
                                 style={'width': '300px'}
                                  ),
