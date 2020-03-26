@@ -26,7 +26,7 @@ app.layout = html.Div(children=[
     html.Div(className='mini-container',
             children=[
                     dcc.Input(
-                                placeholder='Enter a value...',
+                                placeholder='Enter a Stock ticker...',
                                 id='ticker_dropdown',
                                 type='text',
                                 value='x',
