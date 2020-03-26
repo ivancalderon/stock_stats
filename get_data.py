@@ -19,25 +19,12 @@ import asyncio
 # %%
 def get_data_path():
     """
-    Get path to alphavantage.co data API
-    by decryptinig key file, using a customized
-    bash script\n
-    timeframe: string, two options 'daily' or 'intraday'
+    Get path to alphavantage.co data API\n
+    The API path needs and API key.\n
+    Please check the documentation:\n
+    https://www.alphavantage.co/documentation/
     """
-    wd = "/Users/ivancalderon/Documents/Trading/Context"
-    if not os.getcwd() == wd:
-        os.chdir(wd)
-    command = "/usr/local/bin/decriptsource.sh"
-    encripted = "encrypsource.txt"
-    output = "temp.txt"
-    password = "password.txt"
-    args = [command, encripted, output, password]
-    if os.path.isfile(output):
-        os.remove(output)
-    subprocess.run(args, stdout=subprocess.PIPE)
-    with open(output, 'r') as text:
-        source = text.read().rstrip("\n")
-    os.remove(output)
+    source = "https://www.alphavantage.co/query?function={}&symbol={}&outputsize={}&apikey=YOURKEY"
     a = "symbol={}&outputsize"
     b = "symbol={}&interval={}&outputsize"
     return {'intraday': source.replace(a, b), 'daily': source}
