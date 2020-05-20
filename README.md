@@ -1,5 +1,5 @@
 # stock_stats
-Stock's price data mining application<br>
+<b>Stock's price data mining application</b><br>
 This script aims to download stocks price data and render an interactive dashboard with
 useful trading information such as probability of getting a high or a low in the first 15, 30 or 60 minutes of action,
 expected range in each day of the week, and alike.<br>
